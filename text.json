@@ -1,0 +1,10 @@
+{
+  "name": "Hairy",
+  "version": "1.0.0",
+  "author": "Cheese",
+  "scripts": {
+      "test": "echo",
+      "second": "yaya"
+  },
+  "seven": "wow"
+}
