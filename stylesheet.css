@@ -23,7 +23,21 @@
   display: flex;
   align-content: center;
   flex-direction: column;
+  align-items: center;
   padding: 0 20%;
+}
+
+#header::after {
+  content: "";
+  background: url(PC.jpg);
+  background-size: cover;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: 0;
 }
 
 #header:before {
@@ -36,12 +50,23 @@
   left: 0;
   width: 100%;
   height: 600px;
+  z-index: 1;
+}
+
+#particles-js {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  background: transparent;
+  z-index: 0;
+  top: 0;
+  right: 0;
 }
 
 #jumbo {
   display: flex;
   flex-direction: column;
-  margin: 15px auto 0px auto;
+  margin: 60px auto 0px auto;
   z-index: 10;
 }
 
@@ -80,6 +105,22 @@
   cursor: pointer;
 }
 
+#arrow {
+  background-color: rgb(0, 221, 221);
+  -webkit-mask: url(Arrow.svg) no-repeat 50% 50%;
+  mask-image: url(Arrow.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  width: 100px;
+  height: 100px;
+  z-index: 5;
+  margin: auto 0 0 0;
+}
+
+#arrow:hover {
+  cursor: pointer;
+}
+
 nav {
   display: flex;
   width: 100%;
@@ -102,7 +143,6 @@ nav {
   align-items: center;
   width: 100%;
   height: 600px;
-
 }
 
 /*################################### stats */
@@ -126,7 +166,7 @@ nav {
 
 /* footer */
 
-/*############################ Element ############################ */
+/* ############################ Element ############################ */
 
 /* header */
 
@@ -140,8 +180,6 @@ nav {
   align-items: center;
 }
 
-.nav__item {}
-
 .nav__links {
   text-decoration: none;
   font-size: 1.4rem;
@@ -150,18 +188,18 @@ nav {
   font-weight: bold;
 }
 
-
 /* main */
 
 /*################################### features */
 
 .features__title-container {
   display: flex;
-  width: 60%;
+  width: 70%;
   height: auto;
   flex-direction: column;
   align-items: center;
   padding: 50px 0 80px 0;
+  text-align: center;
 }
 
 .title--small {
@@ -191,28 +229,25 @@ nav {
   justify-content: space-between;
 }
 
-.icon1 {
-  width 80px;
-  height: 80px;
-  background-image: url("print.png");
+.icon1,
+.icon2,
+.icon3 {
+  width: 100px;
+  height: 100px;
   background-size: cover;
   padding: 50px;
 }
 
+.icon1 {
+  background-image: url("print.png");
+}
+
 .icon2 {
-  width 100px;
-  height: 100px;
   background-image: url("rotate.png");
-  background: cover;
-  padding: 50px;
 }
 
 .icon3 {
-  width 100px;
-  height: 100px;
   background-image: url("rank.png");
-  background: cover;
-  padding: 50px;
 }
 
 .card__title {
@@ -226,8 +261,6 @@ nav {
   width: 90%;
   text-align: center;
 }
-
-
 
 /*################################### stats */
 
@@ -280,43 +313,37 @@ nav {
   cursor: pointer;
 }
 
-.stat__card:hover .stat__card--total {
-  color: white;
-  transition: 0.5s;
-}
-
+.stat__card:hover .stat__card--total,
 .stat__card:hover .stat__card--title {
   color: white;
   transition: 0.5s;
 }
 
-
 /*################################### benefits */
 
-.benefits__icon1 {
+.benefits__icon1,
+.benefits__icon2,
+.benefits__icon3,
+.benefits__icon4 {
   width: 100px;
   height: 100px;
+}
+
+.benefits__icon1 {
   background: url(cc.png);
 }
 
 .benefits__icon2 {
-  width: 100px;
-  height: 100px;
   background: url(wallet.png);
 }
 
 .benefits__icon3 {
-  width: 100px;
-  height: 100px;
   background: url(paypal.png);
 }
 
 .benefits__icon4 {
-  width: 100px;
-  height: 100px;
   background: url(stripe.png);
 }
-
 
 .benefits__title {
   color: white;
@@ -329,7 +356,6 @@ nav {
   color: rgba(255, 255, 255, 0.7);
   font-size: .8rem;
 }
-
 
 /* footer */
 
@@ -352,7 +378,7 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 160px; 
+  height: 160px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -368,7 +394,8 @@ nav {
   text-align: center;
   font-size: 0.8rem
 }
-/*############################ Modifier ############################ */
+
+/* ############################ Modifier ############################ */
 
 /* header */
 
@@ -380,31 +407,24 @@ nav {
 
 .stat__card--icon1 {
   background: url(commit.png);
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  margin: 2.5rem 1rem;
-  
 }
 
 .stat__card--icon2 {
   background: url(repo.png);
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  margin: 2.5rem 1rem;
 }
 
 .stat__card--icon3 {
   background: url(issue.png);
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  margin: 2.5rem 1rem;
 }
 
 .stat__card--icon4 {
   background: url(pull.png);
+}
+
+.stat__card--icon1,
+.stat__card--icon2,
+.stat__card--icon3,
+.stat__card--icon4 {
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -470,22 +490,8 @@ nav {
   height: 335px;
 }
 
-.benefits__container--row1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 32%;
-  height: auto;
-}
-
-.benefits__container--row2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 32%;
-  height: auto;
-}
-
+.benefits__container--row1,
+.benefits__container--row2,
 .benefits__container--row3 {
   display: flex;
   flex-direction: column;
@@ -494,42 +500,13 @@ nav {
   height: auto;
 }
 
-.benefits__card--red {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 330px;
-  border-radius: 10px;
-  background: #f63d6b;
-  padding: 40px 30px;
+.benefits__container--row2 {
+  justify-content: space-around;
 }
 
-.benefits__card--blue {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 330px;
-  border-radius: 8px;
-  background: #2a83e7;
-  padding: 40px 30px;
-}
-
-.benefits__card--green {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 330px;
-  border-radius: 8px;
-  background: #20b6c3;
-  padding: 40px 30px;
-}
-
+.benefits__card--red,
+.benefits__card--blue,
+.benefits__card--green,
 .benefits__card--purple {
   display: flex;
   flex-direction: column;
@@ -538,11 +515,26 @@ nav {
   width: 100%;
   height: 330px;
   border-radius: 8px;
-  background: #4f4eb7;
+  background: #f63d6b;
   padding: 40px 30px;
 }
 
-.benefits__button--red {
+.benefits__card--blue {
+  background: #2a83e7;
+}
+
+.benefits__card--green {
+  background: #20b6c3;
+}
+
+.benefits__card--purple {
+  background: #4f4eb7;
+}
+
+.benefits__button--red,
+.benefits__button--blue,
+.benefits__button--green,
+.benefits__button--purple {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -553,45 +545,176 @@ nav {
   border-radius: 15px;
   font-weight: bold;
   font-size: .8rem;
+  transition: ease-in-out 0.15s;
 }
 
 .benefits__button--blue {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 30px;
   color: #2a83e7;
-  background: white;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: .8rem;
 }
 
 .benefits__button--green {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 30px;
   color: #20b6c3;
-  background: white;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: .8rem;
 }
 
 .benefits__button--purple {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 30px;
   color: #4f4eb7;
-  background: white;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: .8rem;
 }
+
+.benefits__button--red:hover,
+.benefits__button--blue:hover,
+.benefits__button--green:hover,
+.benefits__button--purple:hover {
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
 /* footer */
 
+/* ######################################## Media Queries ############################################### */
+
+/* header */
+
+@media only screen and (max-width: 1200px) {
+  #particles-js {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #header {
+    padding: 0 15px;
+  }
+  #header:before {
+    content: none;
+  }
+  #jumbo {
+    margin: 30px auto 0px auto;
+  }
+  .button-primary {
+    margin-top: 15px;
+  }
+  #arrow {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .nav__links {
+    font-size: 1.1rem;
+  }
+}
+
+/*################################### features */
+
+@media only screen and (max-width: 1000px) {
+  #features {
+    padding: 0 15px;
+    height: auto;
+  }
+  .features__card-container {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .features__card {
+    min-height: 200px;
+  }
+}
+
+/*################################### stats */
+
+@media only screen and (max-width: 1200px) {
+  .stats__container {
+    justify-content: center;
+  }
+  .stats__container--left {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .stats__info {
+    width: 320px;
+  }
+  .stats__container--right {
+    display: none;
+  }
+}
+
+/*################################### benefits */
+
+@media only screen and (max-width: 1200px) {
+  #benefits {
+    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .benefits__container--left {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .benefits__container--row1,
+  .benefits__container--row3 {
+    width: 100%;
+  }
+  .benefits__container--row2 {
+    width: 100%;
+    height: auto;
+  }
+  .benefits__card--red,
+  .benefits__card--blue,
+  .benefits__card--green,
+  .benefits__card--purple {
+    width: 100%;
+    border-radius: 0px;
+  }
+  .benefits__container--right {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    margin-bottom: 150px;
+    padding: 0 15px;
+  }
+  .stats__info {
+    padding: 15px;
+  }
+}
+
+/* footer */
+
+@media only screen and (max-width: 1200px) {
+  .footer__container {
+    height: auto;
+    padding: 8% 8% 2% 8%;
+    justify-content: space-between;
+  }
+  .footer__container>.button-primary {
+    padding: 15px;
+    margin: 35px auto auto auto;
+  }
+  .footer__bottom-container {
+    padding: 25px 0 0 0;
+    height: auto;
+    margin: 50px 0 0 0;
+  }
+  .footer__info {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .footer__container {
+    padding: 5% 5% 2% 5%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .footer__container {
+    padding: 15px;
+  }
+}
